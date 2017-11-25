@@ -12,18 +12,18 @@ import (
 )
 
 var (
-	httpAddr    = flag.String("http", "localhost:8080", "HTTP listen address")
-	contentPath = flag.String("articles", "articles/", "Path to article files")
-	themePath   = flag.String("theme", "theme/", "Path to theme files")
-	staticPath  = flag.String("static", "static/", "Path to static files")
-	reload      = flag.Bool("reload", false, "Reload content on each page load")
+	httpAddr     = flag.String("http", "localhost:8080", "HTTP listen address")
+	contentPath  = flag.String("content", "content/", "Path to article files")
+	templatePath = flag.String("template", "template/", "Path to template files")
+	staticPath   = flag.String("static", "static/", "Path to static files")
+	reload       = flag.Bool("reload", false, "Reload content on each page load")
 )
 
 func main() {
 	flag.Parse()
 
 	config.ContentPath = *contentPath
-	config.ThemePath = *themePath
+	config.TemplatePath = *templatePath
 
 	mux, err := newServer(*reload, *staticPath, config)
 

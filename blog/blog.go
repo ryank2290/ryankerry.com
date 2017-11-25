@@ -16,8 +16,8 @@ const hostname = "ryankerry.com" // Default hostname for the blog server.
 var config = blog.Config{
 	Hostname:     hostname,
 	BaseURL:      "//" + hostname,
-	HomeArticles: 1, // Number of articles to display on the homepage.
-	FeedArticles: 1, // Number of articles to display on the ATOM and JSON feeds.
+	HomeArticles: 10, // Number of content to display on the homepage.
+	FeedArticles: 10, // Number of content to display on the ATOM and JSON feeds.
 	FeedTitle:    "Ryan Kerry's Blog",
 }
 

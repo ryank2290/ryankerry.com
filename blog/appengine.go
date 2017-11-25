@@ -8,7 +8,7 @@ package main
 //
 //func init() {
 //	config.ContentPath = "articles/"
-//	config.ThemePath = "theme/"
+//	config.ThemePath = "template/"
 //
 //	s, err := blog.NewServer(config)
 //	if err != nil {
