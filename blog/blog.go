@@ -3,6 +3,11 @@ package main
 import (
 	"net/http"
 
+	"golang.org/x/tools/godoc/static"
+
+	"strings"
+	"time"
+
 	"github.com/ryank90/utilities/blog"
 )
 
@@ -27,4 +32,14 @@ func init() {
 	http.Handle("/fonts/", http.FileServer(http.Dir("static")))
 	http.Handle("/styles/", http.FileServer(http.Dir("static")))
 	http.Handle("/scripts/", http.FileServer(http.Dir("static")))
+}
+
+func staticHandler(w http.ResponseWriter, r *http.Request) {
+	name := r.URL.Path
+	b, ok := static.Files[name]
+	if !ok {
+		http.NotFound(w, r)
+		return
+	}
+	http.ServeContent(w, r, name, time.Time{}, strings.NewReader(b))
 }
