@@ -1,4 +1,4 @@
-package main
+package blog
 
 import (
 	"flag"
@@ -22,8 +22,8 @@ var (
 func main() {
 	flag.Parse()
 
-	config.ContentPath = *contentPath
-	config.TemplatePath = *templatePath
+	config.ArticlePath = *contentPath
+	config.ThemePath = *templatePath
 
 	mux, err := newServer(*reload, *staticPath, config)
 

@@ -1,0 +1,56 @@
+{{/* This file is combined with the root.tmpl to display a single article. */}}
+
+{{define "title"}}{{.Doc.Title}} - The Go Blog{{end}}
+
+{{define "content"}}
+<article class="page-article">
+    <div class="page-content-wrapper">
+        <div class="hero-image">
+
+        </div>
+
+        <div class="content-container">
+
+            {{template "doc_single" .Doc}}
+
+            {{with .Doc.Related}}
+            <!-- / related - start / -->
+            <div class="related-content">
+                <div class="wrapper">
+                    <h2 class="">Further Reading</h2>
+                    <div class="related-content-cards">
+                    {{range .}}
+                        <div class="related-content-item">
+                            {{template "card" .Doc.Related}}
+                        </div>
+                    {{end}}
+                    </div>
+                </div>
+            </div>
+            <!-- / related - end / -->
+            {{end}}
+        </div>
+    </div>
+</article>
+{{end}}
+
+{{define "card"}}
+<div class="card">
+    <a href="#" title=""></a>
+    <div class="card-details">
+        <h3></h3>
+        <p class="meta">
+
+            <span class="date"></span>
+        </p>
+
+        <div class="card-excerpt">
+            <p></p>
+        </div>
+
+        <div class="card-link">
+            <a href="#" title=""></a>
+        </div>
+    </div>
+</div>
+{{end}}

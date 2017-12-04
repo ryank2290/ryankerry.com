@@ -1,0 +1,74 @@
+
+/*
+ ------------------------------------------------------
+ Global
+ ------------------------------------------------------
+*/
+
+* {
+    position: relative;
+}
+
+/*
+ ------------------------------------------------------
+ Typography
+ ------------------------------------------------------
+*/
+
+h3 {
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+/*
+ ------------------------------------------------------
+ Articles - List
+ ------------------------------------------------------
+*/
+
+.panels {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.panel {
+    text-align: center;
+    min-height: 140px;
+    border: 0px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-border-radius: 0px;
+    max-width: none;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.panel::before {
+    content: '';
+    width: 92px;
+    height: 2px;
+    display: inline-block;
+    background: #dadada;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    margin-left: -46px;
+}
+
+.panel a {
+    padding: 40px;
+    display: block;
+    cursor: pointer;
+}
+
+.panel p {
+    padding: 16px 10%;
+    max-width: 1280px;
+    margin: 0 auto;
+    color: #999;
+}

@@ -1,0 +1,14 @@
+Monoliths vs Microservices
+18 Jan 2017
+Tags: monoliths
+
+Ryan Kerry
+
+* Background
+
+The basic concept of a microservice really is simple; it’s a small application or function
+that performs a single operation, and it does that operation extremely well. It is a small
+component of a larger system that should be easily replaceable, independently developed, and
+independently deployed.
+
+Hello the next part here...

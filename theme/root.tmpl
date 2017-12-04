@@ -1,0 +1,110 @@
+{{/* This template is combined with other templates to render blog pages. */}}
+
+{{define "root"}}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{template "title" .}}</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/styles/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="/static/styles/style.css" />
+
+	<link rel="alternate" type="application/atom+xml" title="ryankerry.com - Atom Feed" href="https://ryankerry.com/feed.atom" />
+
+</head>
+<body>
+
+    <main class="main-section">
+
+        <!-- / header - start / -->
+        <header class="header-section">
+            <div class="container">
+
+            </div>
+        </header>
+        <!-- / header - end / -->
+
+        <div class="container-fluid">
+            <ul class="panels" id="articles">
+                {{template "content" .}}
+            </ul>
+        </div>
+
+        <!-- / footer - start / -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul>
+                            <li><a href="#" title="twitter" class="">Twitter</a></li>
+                            <li><a href="#" title="github" class="">Github</a></li>
+                            <li><a href="#" title="stack overflow" class="">Stack Overflow</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p class="text-center">
+                        &copy; Copyright 2017 - All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- / footer - end / -->
+
+    </main>
+
+    <script type="text/javascript" src="/static/scripts/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/static/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/scripts/main.js"></script>
+
+</body>
+</html>
+{{end}}
+
+
+
+{{define "doc"}}
+
+	<li class="panel" data-slug="{{.Path}}">
+        <a href="{{.Path}}" title="{{.Title}}">
+            <span class="">PERSPECTIVE / Technology</span>
+            <h3>{{.Title}}</h3>
+            {{.Subtitle}}
+        </a>
+	</li>
+
+{{end}}
+
+
+
+{{define "doc_single"}}
+<div class="content-tag"></div>
+
+<h1 class="title">{{.Title}}</h1>
+
+<p class="meta">
+    {{with .Authors}}
+        By {{authors .}}
+    {{end}}
+    <span class="date">{{.Time.Format "2 January 2006"}}</span>
+</p>
+
+<hr class="divide" />
+
+{{.HTML}}
+
+<hr class="divide" />
+
+{{with .Authors}}
+<section class="author">
+    <h3>About {{authors .}}</h3>
+    <p>Something in here...</p>
+</section>
+{{end}}
+
+{{end}}
