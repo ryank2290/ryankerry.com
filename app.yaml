@@ -22,10 +22,12 @@ handlers:
   static_files: static/styles/bootstrap.min.css
   upload: static/styles/bootstrap.min.css
   secure: always
-- url: /static/styles/style.css
-  static_files: static/styles/style.css
-  upload: static/styles/style.css
+- url: /static/styles/blog.css
+  static_files: static/styles/blog.css
+  upload: static/styles/blog.css
   secure: always
+- url: /static/images
+  static_dir: static/images
 - url: /.*
   script: _go_app
   secure: always

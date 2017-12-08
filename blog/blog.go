@@ -16,7 +16,7 @@ const hostname = "ryankerry.com" // Default hostname for the blog server.
 var config = blog.Config{
 	Hostname:     hostname,
 	BaseURL:      "//" + hostname,
-	HomeArticles: 10, // Number of content to display on the homepage.
+	HomeArticles: 9,  // Number of content to display on the homepage.
 	FeedArticles: 10, // Number of content to display on the ATOM and JSON feeds.
 	FeedTitle:    "Ryan Kerry's Blog",
 }
@@ -32,6 +32,7 @@ func init() {
 	http.Handle("/fonts/", http.FileServer(http.Dir("static")))
 	http.Handle("/styles/", http.FileServer(http.Dir("static")))
 	http.Handle("/scripts/", http.FileServer(http.Dir("static")))
+	http.Handle("/images/", http.FileServer(http.Dir("static")))
 }
 
 func staticHandler(w http.ResponseWriter, r *http.Request) {

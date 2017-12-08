@@ -1,9 +1,13 @@
 {{/* This file is combined with the root.tmpl to display the blog home page. */}}
 
 {{define "title"}}The Go Programming Language Blog{{end}}
+
 {{define "content"}}
 	{{range .Data}}
 		{{template "doc" .}}
 	{{end}}
-	<p>See the <a href="{{.BasePath}}/index">index</a> for more articles.
+
+	<div class="load-more">
+        <a href="{{.BasePath}}/index" class="btn">Show More</a>
+    </div>
 {{end}}

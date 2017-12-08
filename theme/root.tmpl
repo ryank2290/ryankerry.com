@@ -10,53 +10,47 @@
 
 	<title>{{template "title" .}}</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
+
     <link type="text/css" rel="stylesheet" href="/static/styles/bootstrap.min.css" />
-	<link type="text/css" rel="stylesheet" href="/static/styles/style.css" />
+	<link type="text/css" rel="stylesheet" href="/static/styles/blog.css" />
 
 	<link rel="alternate" type="application/atom+xml" title="ryankerry.com - Atom Feed" href="https://ryankerry.com/feed.atom" />
 
 </head>
 <body>
 
-    <main class="main-section">
-
-        <!-- / header - start / -->
-        <header class="header-section">
-            <div class="container">
-
-            </div>
-        </header>
-        <!-- / header - end / -->
-
+    <main class="app-container">
         <div class="container-fluid">
-            <ul class="panels" id="articles">
-                {{template "content" .}}
-            </ul>
-        </div>
 
-        <!-- / footer - start / -->
-        <footer class="footer-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul>
-                            <li><a href="#" title="twitter" class="">Twitter</a></li>
-                            <li><a href="#" title="github" class="">Github</a></li>
-                            <li><a href="#" title="stack overflow" class="">Stack Overflow</a></li>
-                        </ul>
-                    </div>
+            <!-- / header - start / -->
+            <header class="app-header">
+                <div class="container">
+                    <img src="/static/images/rk.jpg" alt="" class="img-circle" />
+                    <h1>Ryan Kerry</h1>
+                    <p>I am a Techie, Cloud Architect and Agile Professional, Global CTO @lushltd.</p>
                 </div>
+            </header>
+            <!-- / header - end / -->
 
-                <div class="row">
-                    <p class="text-center">
-                        &copy; Copyright 2017 - All Rights Reserved.
-                    </p>
+            <!-- / articles - start / -->
+            <div class="app-wrapper">
+                <div class="container flex">
+                    {{template "content" .}}
                 </div>
             </div>
-        </footer>
-        <!-- / footer - end / -->
+            <!-- / articles - end / -->
 
-    </main>
+            <!-- / footer - start / -->
+            <footer class="app-footer">
+                <div class="container">
+
+                </div>
+            </footer>
+            <!-- / footer - end / -->
+
+        </div>
+    <div>
 
     <script type="text/javascript" src="/static/scripts/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="/static/scripts/bootstrap.min.js"></script>
@@ -70,15 +64,46 @@
 
 {{define "doc"}}
 
-	<li class="panel" data-slug="{{.Path}}">
-        <a href="{{.Path}}" title="{{.Title}}">
-            <span class="">PERSPECTIVE / Technology</span>
-            <h3>{{.Title}}</h3>
-            {{.Subtitle}}
+    <div class="card article-item" data-slug="{{.Path}}">
+        <a href="{{.Path}}" title="{{.Title}}" class="card-image">
+            <div class="background-image">
+                <img src="{{.Image}}" alt="" class="img-responsive" />
+            </div>
         </a>
-	</li>
+
+        <div class="card-details">
+            <div class="card-tag tag-{{.Category | ToLower}}">
+                {{.Category}}
+            </div>
+
+            <h2 class="title">
+                <a href="{{.Path}}" title="{{.Title}}">{{.Title}}</a>
+            </h2>
+
+            <p class="meta">
+                {{with .Authors}}
+                    By {{authors .}}
+                {{end}}
+                - {{.Time.Format "2 January 2006"}}
+            </p>
+
+            <div class="intro">
+                <p>{{.Intro}}</p>
+            </div>
+
+            <div class="read-more link">
+                <a href="{{.Path}}" title="">Read more</a>
+            </div>
+        </div>
+    </div>
 
 {{end}}
+
+
+
+{{ define "doc_promoted" }}
+
+{{ end }}
 
 
 
@@ -95,6 +120,7 @@
 </p>
 
 <hr class="divide" />
+
 
 {{.HTML}}
 

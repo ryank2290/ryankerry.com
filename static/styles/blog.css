@@ -1,0 +1,196 @@
+/*
+ ------------------------------------------------------
+ Global
+ ------------------------------------------------------
+*/
+
+* {
+    position: relative;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+p, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.app-header {
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.app-header img {
+    width: 100px;
+    height: 100px;
+}
+
+
+.app-wrapper {
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex: auto;
+}
+
+
+.card {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    vertical-align: top;
+    width: 100%;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.12);
+    background-color: #ffffff;
+}
+
+.background-image {
+    height: 245px;
+    background-color: #000;
+    overflow: hidden;
+
+}
+
+.card-tag {
+    display: inline-block;
+    height: 22px;
+    padding: 0 5px;
+    background: #ff5519;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: -11px;
+}
+
+.card-details {
+    padding: 20px;
+}
+
+.card-details h2.title {
+    font-size: 24px;
+}
+
+.card-details h2.title a {
+    font-family: 'Open Sans', sans-serif;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.card-details p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.meta {
+    color: #646464;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    float: left;
+    text-align: left;
+    border-bottom: 2px solid #ff5519;
+}
+
+.read-more a {
+    border-color: #ff5519;
+    transition: color .2s ease-in-out;
+    text-decoration: none;
+}
+
+.app-footer {
+    width: 100%;
+    height: 100%;
+    min-height: 100px;
+    background-color: #333333;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+@media all and (min-device-width : 320px) and (max-device-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media only screen  and (min-width : 1200px) {
+    .card {
+        width: 32%;
+        margin-right: 22px;
+    }
+}
+
+
+@media (min-width: 576px) {
+    .card {
+        width: 100%;
+        margin-right: 0px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .card {
+        width: 48%;
+        margin-right: 22px;
+    }
+
+    .card:nth-child(2n+2) {
+        margin-right: 0px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card {
+        width: 48%;
+        margin-right: 22px;
+    }
+
+    .card:nth-child(2n+2) {
+        margin-right: 0px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card {
+        width: 32%;
+        margin-right: 22px;
+    }
+
+    .card:nth-child(2n+2) {
+        margin-right: 22px !important;
+    }
+
+    .card:nth-child(3n+3) {
+        margin-right: 0px !important;
+    }
+}

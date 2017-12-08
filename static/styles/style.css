@@ -66,6 +66,10 @@ h3 {
     cursor: pointer;
 }
 
+.panel a:hover {
+    background-color: #cccccc;
+}
+
 .panel p {
     padding: 16px 10%;
     max-width: 1280px;

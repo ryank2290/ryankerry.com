@@ -12,18 +12,18 @@ import (
 )
 
 var (
-	httpAddr     = flag.String("http", "localhost:8080", "HTTP listen address")
-	contentPath  = flag.String("content", "content/", "Path to article files")
-	templatePath = flag.String("template", "template/", "Path to template files")
-	staticPath   = flag.String("static", "static/", "Path to static files")
-	reload       = flag.Bool("reload", false, "Reload content on each page load")
+	httpAddr    = flag.String("http", "localhost:8080", "HTTP listen address")
+	articlePath = flag.String("article", "article/", "Path to article files")
+	themePath   = flag.String("theme", "theme/", "Path to template files")
+	staticPath  = flag.String("static", "static/", "Path to static files")
+	reload      = flag.Bool("reload", false, "Reload content on each page load")
 )
 
 func main() {
 	flag.Parse()
 
-	config.ArticlePath = *contentPath
-	config.ThemePath = *templatePath
+	config.ArticlePath = *articlePath
+	config.ThemePath = *themePath
 
 	mux, err := newServer(*reload, *staticPath, config)
 
@@ -48,9 +48,11 @@ func newServer(reload bool, staticPath string, config blog.Config) (http.Handler
 		mux.HandleFunc("/", reloadServer)
 	} else {
 		s, err := blog.NewServer(config)
+
 		if err != nil {
 			return nil, err
 		}
+
 		mux.Handle("/", s)
 	}
 
