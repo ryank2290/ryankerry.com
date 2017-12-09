@@ -1,8 +1,8 @@
 Setting up a Helm Repo using Google Cloud bucket storage
 06 Dec 2017
-Intro: In a driverless future, how will we hail a taxi? We argue that you need to look beyond app-based solutions to make...
+Intro: Introduction into how to setup a repository within the Google Cloud Platform to store your Helm Charts.
 Image: /static/images/articles/rk.jpg
-Category: DevOps
+Category: Engineering
 Tags: devops, infrastructure, google, cloud
 
 Ryan Kerry

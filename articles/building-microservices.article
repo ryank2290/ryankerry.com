@@ -1,6 +1,8 @@
-Building microservices
+Building microservices the right way
 25 Nov 2017
-Intro: This is the intro
+Intro: Introduction into how to setup a repository within the Google Cloud Platform to store your Helm Charts.
+Image: /static/images/articles/rk.jpg
+Category: Engineering
 Tags: microservice, nanoservice
 
 Ryan Kerry
