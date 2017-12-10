@@ -13,22 +13,7 @@
 
             {{template "doc_single" .Doc}}
 
-            {{with .Doc.Related}}
-            <!-- / related - start / -->
-            <div class="related-content">
-                <div class="wrapper">
-                    <h2 class="">Further Reading</h2>
-                    <div class="related-content-cards">
-                    {{range .}}
-                        <div class="related-content-item">
-                            {{template "card" .Doc.Related}}
-                        </div>
-                    {{end}}
-                    </div>
-                </div>
-            </div>
-            <!-- / related - end / -->
-            {{end}}
+
         </div>
     </div>
 </article>

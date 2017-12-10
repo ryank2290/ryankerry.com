@@ -181,6 +181,19 @@ a {
     margin-bottom: 15px;
 }
 
+.social-links {
+    list-style: none;
+
+}
+
+.social-links li {
+
+}
+
+.social-links li a {
+
+}
+
 
 
 @media (min-width: 576px) {

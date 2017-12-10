@@ -13,7 +13,6 @@
 
     function screenSizeChecker() {
         var articles = $(".card");
-        console.log(($(window).width() + 15));
 
         var width = ($(window).width() + 15);
 
